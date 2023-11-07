@@ -1,11 +1,9 @@
-import withCounter from "./HOC/withCounter";
-
-interface Counterprops {
+interface State {
   count: number;
   incrementCount: () => void;
 }
 
-const HoverCounter = ({ count, incrementCount }: Counterprops) => {
+const HoverCounter = ({ count, incrementCount }: State) => {
   return (
     <div>
       <h1 onMouseEnter={incrementCount}>Hovered {count} times</h1>
@@ -13,6 +11,4 @@ const HoverCounter = ({ count, incrementCount }: Counterprops) => {
   );
 };
 
-const WrapperCounter = withCounter(HoverCounter);
-
-export default WrapperCounter;
+export default HoverCounter;

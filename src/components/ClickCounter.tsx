@@ -1,11 +1,9 @@
-import withCounter from "./HOC/withCounter";
-
-interface Counterprops {
+interface State {
   count: number;
   incrementCount: () => void;
 }
 
-const ClickCounter = ({ count, incrementCount }: Counterprops) => {
+const ClickCounter = ({ count, incrementCount }: State) => {
   return (
     <div>
       <button type="button" onClick={incrementCount}>
@@ -15,6 +13,4 @@ const ClickCounter = ({ count, incrementCount }: Counterprops) => {
   );
 };
 
-const WrapperCounter = withCounter(ClickCounter);
-
-export default WrapperCounter;
+export default ClickCounter;
